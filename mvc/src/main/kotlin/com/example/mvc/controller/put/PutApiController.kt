@@ -28,6 +28,7 @@ class PutApiController {
     fun putMappingObject(@Valid @RequestBody userRequest: UserRequest, bindingResult: BindingResult): ResponseEntity<String> {
 
         // 어노테이을 통해 빈 검증
+        // bindingResult -> Validator를 상속받는 클래스에서 객체값을 검증하는 방식이다.
         if(bindingResult.hasErrors()){
             //500 error
             val msg = StringBuilder()
